@@ -342,7 +342,6 @@ $(function() {
         'margin-bottom': '1px',
         'padding-left': '5px',
         'font-weight': 'normal',
-        'text-shadow': '-1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black'
     });
 
     // Rail section - which is basically the 'ads' which float:right default
@@ -418,7 +417,6 @@ $(function() {
     $('#rail').css({
         'padding-top': '5px'
     });
-
     // Explore our products, find out about our technical services
     $('#capabilitiesContainer a').css({
         'font-size': '14px',
