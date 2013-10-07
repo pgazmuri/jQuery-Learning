@@ -735,8 +735,17 @@ $(function() {
     });
     // --- END HOME PAGE STYLING ---
 
-    // Add left padding to the text in the footer.
-    $('#footerLinks').not($('#footerLogo')).css({'width': '85%', 'margin-left': '5px'});
+    // Center all content in the footer
+    $('#footer').css({
+        'text-align': 'center'
+    })
+
+    // Remove underliens from all links in the footer when they're being hovered
+    $('#footer a').hover(function(){
+        $(this).css({
+            'text-decoration': 'none'
+        });
+    });
 
 //} // END USER-AGENT CHECK
 
