@@ -243,6 +243,7 @@ $(function() {
 
         // Add both the background and text to the content container at the start.
         $('#contentContainer').prepend($('nav.main div div ul'));
+        $('#contentContainer ul.root').css('padding-bottom', '5px');
     }
 
 
@@ -706,6 +707,36 @@ $(function() {
         sliderShow.start();
     }
 
+    // --- BEGIN HOME PAGE STYLING ---
+
+    // Add padding to all of the text in the body.
+    $('#contentContainer ul.callouts').css('padding-left', '5px');
+    // Readjust the images to be centered by also giving them right-padding as a result of the above call.
+    $('#contentContainer img').css('padding-right', '5px');    
+
+    // Makes links rectangular
+    $('#contentContainer ul.callouts a').css({
+        'font-size': '14px',
+        'background-color': '#0068a6',
+        'padding': '3px',
+        'margin-bottom': '20px',
+        'color': '#ffffff',
+        'font-weight': 'normal'
+    });
+
+    // Add spacing
+    $('#contentContainer ul.callouts li').css({
+        'margin-bottom': '10px'
+    });
+
+    // Remove bold
+    $('#contentContainer ul.callouts li *').css({
+        'font-weight': 'normal'
+    });
+    // --- END HOME PAGE STYLING ---
+
+    // Add left padding to the text in the footer.
+    $('#footerLinks').not($('#footerLogo')).css({'width': '85%', 'margin-left': '5px'});
 
 //} // END USER-AGENT CHECK
 
