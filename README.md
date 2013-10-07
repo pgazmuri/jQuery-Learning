@@ -17,3 +17,6 @@
 15. Center all links on the page.
 16. ~~Grey backdrop behind text for image slider.~~
 17. ~~Remove black stroke around nav units~~
+
+**Inconsistencies**
+=====
