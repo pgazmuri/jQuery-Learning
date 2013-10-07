@@ -281,24 +281,31 @@ $(function() {
     })).appendTo('.biz-unit div div ul');
 
     // This is the toggleable menu button at the top of the page which is prepended to the entire nav menu.
-    var k =
-        $('<li class="static" style="width: 100%; border: 0; padding: 0; position: relative;">' +
-            '<img src="http://i.imgur.com/ClaAe3H.png" style="height: 20px; float: left; position: absolute; left: 20px; right: initial; top: 10px;" />' +
+    var menuHeader =
+        $('<li id="myMenuHeader" class="static" style="width: 100%; border: 0; padding: 0; position: relative;">' +
+            '<img id="menuGPLogo" title="View Menu" src="http://i.imgur.com/ClaAe3H.png" style="height: 20px; float: left; position: absolute; left: 20px; right: initial; top: 10px;" />' +
             '<a style="padding: 0; font-weight: bold; font-size: 1.25em !important; background-image: url(/_layouts/Images/GPPWebsiteBase/global/navback.jpg) !important;" class="static menu-item" href="#">' +
-            '<span style="float: right; margin-right: 50px;">Menu</span>' +
-            // '<span id="headerCollapsable" style="float: right; margin-right: 20px;">≡</span>' +
-            '<img src="http://i.imgur.com/QxzaAyU.png" style="height: 20px; position: absolute; left: initial; right: 20px; top: 10px;" />' +
+            '<span id="menuViewBtn" title="View Menu">Menu</span>' +
+            '<img id="menuSearchBtn" title="Search" src="http://i.imgur.com/sJD6kN6.png" style="height: 20px; position: absolute; left: initial; right: 20px; top: 10px;" />' +
             '</a>' +
-            '</li>')
-        .click(function() {
-            $('#headerCollapsable').text('≡');
+            '</li>');   
 
-            var header = $('.biz-unit ul li');
+    // When a user clicks the MENU text or GP Logo, toggle the menu and hide the search.
+    // When a user clicks on the search, toggle the search and hide the menu.
+    menuHeader.click(function(event) {
+        var header = $('.biz-unit ul li');
 
-            header.not(header.first()).toggle();
-        });
+        if($(event.target).is("#menuSearchBtn")){
+            header.last().toggle();
+            // Not the last and not the first.
+            header.slice(1, -1).hide();
+        } else{
+            header.slice(1, -1).toggle();
+            header.last().hide();
+        }
+    });
 
-    $('.biz-unit div div ul').prepend(k);
+    $('.biz-unit div div ul').prepend(menuHeader);
 
     // Header Nav
     $('.biz-unit a').css({
@@ -484,8 +491,11 @@ $(function() {
    // });
 
     // By default, the header should collapse on the page load - at least for now.
-    //toggleHeaderCollapse();
-    k.click();
+    menuHeader.click();
+
+    // By default, hide the search bar in the menuHeader.
+    $('.biz-unit ul li').last().hide();
+
 
     // map formatting
     var mapContainer = $('#mapContainer');
@@ -689,8 +699,12 @@ $(function() {
         }
     })();
 
-    sliderShow.initialize('.dna');
-    sliderShow.start();
+    // If the page is the home page or a default page, we should display the slider.
+    // We may end up changing this to include _gppLayout.  TODO?
+    if (window.location.href.toLowerCase().indexOf('home') !== -1 || window.location.href.toLowerCase().indexOf('default') !== -1) {
+        sliderShow.initialize('.dna');
+        sliderShow.start();
+    }
 
 
 //} // END USER-AGENT CHECK
