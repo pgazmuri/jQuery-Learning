@@ -15,5 +15,5 @@
 13. Address links in phone open up maps app in phone
 14. ~~Clean up Nathan's code to automatically create a list of sliders, instead of dynamically recreating each slider every time.~~
 15. Center all links on the page.
-16. Grey backdrop behind text for image slider.
+16. ~~Grey backdrop behind text for image slider.~~
 17. ~~Remove black stroke around nav units~~
