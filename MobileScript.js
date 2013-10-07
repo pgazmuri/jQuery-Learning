@@ -616,12 +616,23 @@ $(function() {
         $('#slideShow div.rotator ul.cycle li').each(function() {
             $this = $(this);
 
+            var slide = $(
+                    '<div class="content" style="overflow: hidden;">' +
+                    '<h3>' +
+                    $this.find('h1').text() +
+                    '</h3>' +
+                    '</div>').css({
+                        'background-image': 'url(' + $this.find('img').attr('src') + ')'
+                    });;
+
             sliderDataStore.push({
+                'Slide': slide,
                 'Title': $this.find('h1').text(),
                 'Link': $this.find('a').attr('href'),
                 'Text': $this.find('p').text(),
                 'Image': $this.find('img').attr('src')
             });
+
         });
 
         return {
@@ -680,21 +691,7 @@ $(function() {
         }
 
         function getSlide(index) {
-            var data = sliderDataStore[index],
-                slide = $(
-                    '<div class="content" style="overflow: hidden;">' +
-                    '<h3>' +
-                    data.Title +
-                    '</h3>' +
-                    // '<p>' +
-                    // 'Text Goes Here Text Goes Here Text Goes Here Text Goes Here Text Goes Here Text Goes Here Text Goes Here Text Goes Here Text Goes Here Text Goes Here Text Goes Here Text Goes Here' +
-                    // '</p>' +
-                    '</div>');
-
-            return slide
-                .css({
-                    'background-image': 'url(' + data.Image + ')'
-                });
+            return sliderDataStore[index].Slide;
         }
     })();
 
