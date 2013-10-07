@@ -13,3 +13,4 @@ Hooray for jQuery, it's the best! Let's track how much we can learn!
 6. Locations page - take the filter results out of a dropdown and reduce them into a sub-nav similar to the ones seen on other pages. Basically make it a lot prettier and other things.
 7. As you click on filters, they should be 'active' or at least display some background-color state.
 8. When clicking on a location, open maps app in phone and redirect them there.
+9. Add padding to the body of each left-aligned element.
