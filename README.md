@@ -1,8 +1,3 @@
-jQuery-Learning
-===============
-
-Hooray for jQuery, it's the best! Let's track how much we can learn!
-
 **Todos**
 =====
 1. ~~Remove Contact Us / GP - Our DNA / Locations / GP - Contact Us from Business Pages (sub-navs)~~
