@@ -9,3 +9,9 @@
 7. As you click on filters, they should be 'active' or at least display some background-color state.
 8. When clicking on a location, open maps app in phone and redirect them there.
 9. Add padding to the body of each left-aligned element.
+10. Center footer text
+11. Desktop/Mobile switcher view in the Footer.
+12. Email mail-to links open up mail app in phone
+13. Address links in phone open up maps app in phone
+14. Clean up Nathan's code to automatically create a list of sliders, instead of dynamically recreating each slider every time.
+15. In each
