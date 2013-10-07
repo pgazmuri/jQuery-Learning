@@ -195,18 +195,34 @@ $(function() {
 
     $('.ms-hidden').hide();
 
-    // About Us - Our DNA - Locations - Contact Us
-    // Replace Contact Us and About Us with the GP naming convention to avoid
-    // similar names on business home pages.
-    $('nav.main div div ul li a span span').each(function() {
-        if ($(this).text().toLowerCase() === 'contact us')
-            $(this).text('GP - Contact Us');
+    // Inserts the About Us, Our DNA, Locations, and Contact Us within only
+    // the Home page.
+    if (window.location.href.toLowerCase().indexOf('home') !== -1) {
 
-        if ($(this).text().toLowerCase() === 'our dna')
-            $(this).text('GP - Our DNA');
-    });
+        // Styling for the individual li, basically making the background for the text to be displayed in
+        $('nav.main div div ul li').css({
+            'background-color': '#0068a6',
+            'padding-left': '5px',
+            'width': '100%',
+            'margin-top': '1px',
+            'margin-bottom': '2px',
+            'border-top': '1px solid black',
+            'border-bottom': '1px solid black'
+        });
 
-    $('nav.main div div ul li').appendTo('#tabSubNav ul');
+        // The text within the individual li's background
+        $('nav.main div div ul li a span span').css({
+            'font-size': '18px',
+            'color': '#ffffff',
+            'font-weight': 'normal',
+            'text-shadow': '-1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black'
+        });
+        
+
+        // Add both the background and text to the content container at the start.
+        $('#contentContainer').prepend($('nav.main div div ul'));
+    }
+
 
     // GP Cellulose
     $('.logo').css({
