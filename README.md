@@ -3,9 +3,8 @@ jQuery-Learning
 
 Hooray for jQuery, it's the best! Let's track how much we can learn!
 
-**YOU GON' LEARN TO-DAY.**
 
-Todos
+**Todos**
 =====
 - ~~Remove Contact Us / GP - Our DNA / Locations / GP - Contact Us from Business Pages (sub-navs)~~
 - ~~Take the links in 1) and only apply them to the Home page (basically give the home page a sub-nav too which contains all these links)~~
