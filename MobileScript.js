@@ -618,12 +618,12 @@ $(function() {
 
             var slide = $(
                     '<div class="content" style="overflow: hidden;">' +
-                    '<h3>' +
+                    '<h3 style="background: rgba(125, 125, 125, .30)">' +
                     $this.find('h1').text() +
                     '</h3>' +
                     '</div>').css({
                         'background-image': 'url(' + $this.find('img').attr('src') + ')'
-                    });;
+                    });
 
             sliderDataStore.push({
                 'Slide': slide,
